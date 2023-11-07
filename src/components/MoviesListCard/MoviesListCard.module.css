@@ -1,0 +1,42 @@
+.movie_list_card{
+    height: 350px;
+    width: calc(20% - 2px - 0.5em);
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 1em;
+    background-color: var(--accent);
+    box-shadow: var(--shadow);
+    transition: all ease 500ms;
+    color:var(--text-primary);
+}
+
+.movie_list_card:hover{
+    height: 340px;
+    box-shadow: 0 0 10px var(--accent-hover), 0 0 10px var(--accent-hover), 0 0 10px var(--accent-hover), 0 0 10px var(--accent-hover),  0 0 10px var(--accent-hover) ;
+}
+
+.movie_list_card img{
+    border-radius: 1em 1em 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    padding: 0.2em 0;
+    height: 30%;
+}
+
+.title {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.date{
+    color:var(--text-secondary)
+}
