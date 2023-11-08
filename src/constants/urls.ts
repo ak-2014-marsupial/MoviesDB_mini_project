@@ -8,6 +8,9 @@ const urls={
     getPopularMovie:`${movie}/popular`,
     searchMovie:`/search`,
     getMovieDetails:(id:number):string=>`${movie}/${id}`,
+    getMoviesByGenreId:(genreId:string):string=>`/genre/${genreId}/movies`,
+    getGenres:`/genre/list`
+
 
 }
 

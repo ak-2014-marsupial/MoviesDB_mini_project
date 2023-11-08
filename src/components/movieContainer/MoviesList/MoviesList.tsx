@@ -3,19 +3,24 @@ import { IMovieEntries} from "../../../interfaces/movieInterface";
 
 import css from './MoviesList.module.css';
 import {moviesService} from "../../../services/moviesService";
-import {useSearchParams} from "react-router-dom";
+import {NavigateFunction, useParams, useSearchParams} from "react-router-dom";
 import {MoviesListCard} from "../MoviesListCard";
+import {IRes} from "../../../types/IResType";
 
+interface IProps{
+    dataSource:(page:number,id?:string)=>IRes<IMovieEntries>,
+}
 
-const MoviesList: FC = () => {
+const MoviesList: FC<IProps> = ({dataSource}) => {
     const [data, setData] = useState<IMovieEntries>({} as IMovieEntries);
     const {page, total_pages, total_results, results} = data;
 
     const [query, setQuery] = useSearchParams({page: `${page}`});
     const currentPage = +query.get('page') ? +query.get('page') : 1;
-
+const {id} =useParams();
     useEffect(() => {
-        moviesService.getAll(currentPage).then(({data}) => setData(data))
+        dataSource(currentPage,id).then(({data})=> setData(data))
+        // moviesService.getAll(currentPage).then(({data}) => setData(data))
     }, [currentPage]);
 
 

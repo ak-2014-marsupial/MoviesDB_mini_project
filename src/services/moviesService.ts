@@ -1,12 +1,13 @@
 import {axiosService} from "./axiosService";
 import {urls} from "../constants/urls";
-import {IRes} from "../types/IResType";
-import { IMovieEntries, IMovieInfo} from "../interfaces/movieInterface";
+import {IGenres, IRes} from "../types/IResType";
+import {IGenre, IMovieEntries, IMovieInfo} from "../interfaces/movieInterface";
 
 const moviesService={
-    // getAll :():IRes<IMovieEntries>=>axiosService.get(urls.getMovies)
     getAll :(page:number):IRes<IMovieEntries>=>axiosService.get(urls.getMovies,{params:{page:`${page}`}}),
-    getById:(id:number):IRes<IMovieInfo>=>axiosService.get(urls.getMovieDetails(id))
+    getById:(id:number):IRes<IMovieInfo>=>axiosService.get(urls.getMovieDetails(id)),
+    getAllByGenreId:(page:number,genreId:string):IRes<IMovieEntries>=>axiosService.get(urls.getMoviesByGenreId(genreId),{params:{page:`${page}`}}),
+    getGenres:():IRes<IGenres<IGenre[]> >=>axiosService.get(urls.getGenres),
 }
 
 export {

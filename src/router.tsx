@@ -1,18 +1,19 @@
 import React from "react";
-import {GenresPage, MoviesPage} from "./pages";
+import {GenresPage} from "./pages";
 import {MainLayout} from "./layouts";
 import {createBrowserRouter, Navigate} from "react-router-dom";
 import {MovieInfoPage} from "./pages/MovieInfoPage";
+import {MoviesList} from "./components";
+import {moviesService} from "./services/moviesService";
 
 const router = createBrowserRouter([
     {
         path: '', element: <MainLayout/>, children: [
             {index: true, element: <Navigate to={"movies"}/>},
-            {path: "movies", element: <MoviesPage/>},
-            {path:'movies/:movieId',element:<MovieInfoPage/>},
-            {path:'movies/genre/:id',element:<GenresPage/>},
-            {path:'genres',element:<GenresPage/>}
-
+            {path: 'genres', element: <GenresPage/>},
+            {path: 'movies', element: <MoviesList dataSource={moviesService.getAll}/>},
+            {path: 'movies/:movieId', element: <MovieInfoPage/>},
+            {path: 'movies/genre/:id', element: <MoviesList dataSource={moviesService.getAllByGenreId}/>}
         ]
     }
 ])

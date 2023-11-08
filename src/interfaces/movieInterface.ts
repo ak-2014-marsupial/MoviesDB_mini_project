@@ -54,6 +54,7 @@ export interface IGenre {
     name: string
 };
 
+
 export interface IProduction_company {
     id: number
     logo_path: string

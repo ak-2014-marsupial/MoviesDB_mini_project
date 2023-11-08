@@ -16,7 +16,7 @@ const MoviesListCard:FC<IProps> = ({movie}) => {
     const imgPath = backdrop_path ? `${posterBaseUrl}${backdrop_path}` : '';
 
     const getInfo=()=> {
-        navigate(`${id}`)
+        navigate(`/movies/${id}`)
     }
 
     return (
