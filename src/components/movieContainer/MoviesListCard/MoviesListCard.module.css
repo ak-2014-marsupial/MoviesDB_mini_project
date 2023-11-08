@@ -11,7 +11,8 @@
     background-color: var(--accent);
     box-shadow: var(--shadow);
     transition: all ease 500ms;
-    color:var(--text-primary);
+    color:inherit;
+    /*color:var(--text-primary);*/
 }
 
 .movie_list_card:hover{
@@ -27,16 +28,28 @@
 }
 
 .content {
-    padding: 0.2em 0;
+    padding: 0.2em;
     height: 30%;
+    width: 100%;
+
+}
+.rating{
+    text-align: center;
+    margin: 0.2em;
 }
 
 .title {
     font-size: 1em;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 0.2em;
+
 }
 
 .date{
-    color:var(--text-secondary)
+    color:var(--text-secondary);
+    text-align: end;
+    margin: 0.2em;
+
+
 }

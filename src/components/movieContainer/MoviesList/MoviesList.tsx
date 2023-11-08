@@ -1,10 +1,10 @@
 import React, {FC, useContext, useEffect, useState} from 'react';
-import {IMovie, IMovieEntries} from "../../interfaces/movieInterface";
-import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import { IMovieEntries} from "../../../interfaces/movieInterface";
 
 import css from './MoviesList.module.css';
-import {moviesService} from "../../services/moviesService";
+import {moviesService} from "../../../services/moviesService";
 import {useSearchParams} from "react-router-dom";
+import {MoviesListCard} from "../MoviesListCard";
 
 
 const MoviesList: FC = () => {

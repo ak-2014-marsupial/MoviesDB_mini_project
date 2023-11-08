@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const PosterPreview = () => {
+import css from "./PosterPreview.module.css";
+import {posterBaseUrl} from "../../constants";
+
+interface  IProps{
+    poster_path:string
+    title:string
+}
+
+const PosterPreview:FC<IProps>= ({poster_path,title}) => {
     return (
-        <div>
-          <h1>PosterPreview</h1>
-        </div>
+            <div className={css.poster_preview} >
+                <img src={`${posterBaseUrl}${poster_path}`} alt={title}/>
+            </div>
     );
 };
 

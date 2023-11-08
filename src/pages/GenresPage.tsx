@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MovieInfo = () => {
+const GenresPage = () => {
     return (
         <div>
-           <h1>MovieInfo</h1>
+            Genres
         </div>
     );
 };
 
-export  {MovieInfo};
+export  {GenresPage};

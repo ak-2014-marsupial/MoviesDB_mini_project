@@ -1,4 +1,24 @@
 .header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color:var(--text-primary);
+    height: 10vh;
+
+    position: sticky;
+    top: 0;
+    opacity: 0.9;
+    z-index: 20;
+    background-color: var(--background);
+    font-size: 1.4em;
+    font-weight:bold ;
+}
+
+.header a{
+    text-decoration: none;
+    color:inherit;
+    font-size: inherit;
+}
+.header a[class="active"]{
+   color: red;
 }

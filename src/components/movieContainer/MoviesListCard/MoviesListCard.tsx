@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
 
-import {IMovie} from "../../interfaces/movieInterface";
+import {IMovie} from "../../../interfaces/movieInterface";
 import css from "./MoviesListCard.module.css"
-import {posterBaseUrl} from "../../constants/urls";
+import {posterBaseUrl} from "../../../constants/urls";
 import {useNavigate} from "react-router-dom";
 import StarRatings from "react-star-ratings";
+import "../../../constants/var.css"
 
 interface IProps{
     movie:IMovie
@@ -24,14 +25,17 @@ const MoviesListCard:FC<IProps> = ({movie}) => {
                 <img src={imgPath} alt={`img ${id}`}/>
             </div>
             <div className={css.content}>
+                <div className={css.rating}>
+                    <StarRatings starRatedColor='var(--star-primary)'
+                                 starEmptyColor='var(--star-secondary'
+                                 numberOfStars={10}
+                                 starDimension={'18px'}
+                                 starSpacing={'1px'}
+                                 rating={vote_average}
+                    />
+                </div>
                 <div className={css.title}> {title}</div>
-                <StarRatings starRatedColor="red"
-                             numberOfStars={10}
-                             starDimension={'18px'}
-                             starSpacing={'1px'}
-                             rating={vote_average}
-                />
-                <div className={css.date}>{release_date}</div>
+                <div className={css.date}>{new Date(release_date).getFullYear()}</div>
             </div>
 
 
