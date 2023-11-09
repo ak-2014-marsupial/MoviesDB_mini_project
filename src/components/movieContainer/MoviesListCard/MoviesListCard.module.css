@@ -11,7 +11,7 @@
     background-color: var(--accent);
     box-shadow: var(--shadow);
     transition: all ease 500ms;
-    color:inherit;
+    /*color:inherit;*/
     /*color:var(--text-primary);*/
 }
 
@@ -31,11 +31,14 @@
     padding: 0.2em;
     height: 30%;
     width: 100%;
+    color: var(--text-primary);
+
 
 }
 .rating{
     text-align: center;
     margin: 0.2em;
+    color: var(--text-primary);
 }
 
 .title {
@@ -43,6 +46,7 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 0.2em;
+    color: var(--text-secondary);
 
 }
 

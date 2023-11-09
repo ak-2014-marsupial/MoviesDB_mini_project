@@ -1,25 +1,24 @@
-import React, {FC, useContext, useEffect, useState} from 'react';
-import { IMovieEntries} from "../../../interfaces/movieInterface";
+import React, {FC, useEffect, useState} from 'react';
+import {IMovieEntries} from "../../../interfaces/movieInterface";
 
 import css from './MoviesList.module.css';
-import {moviesService} from "../../../services/moviesService";
-import {NavigateFunction, useParams, useSearchParams} from "react-router-dom";
+import {useParams, useSearchParams} from "react-router-dom";
 import {MoviesListCard} from "../MoviesListCard";
 import {IRes} from "../../../types/IResType";
 
-interface IProps{
-    dataSource:(page:number,id?:string)=>IRes<IMovieEntries>,
+interface IProps {
+    dataSource: (page: number, id?: string) => IRes<IMovieEntries>,
 }
 
 const MoviesList: FC<IProps> = ({dataSource}) => {
     const [data, setData] = useState<IMovieEntries>({} as IMovieEntries);
-    const {page, total_pages, total_results, results} = data;
+    const {page, total_pages, results} = data;
 
     const [query, setQuery] = useSearchParams({page: `${page}`});
     const currentPage = +query.get('page') ? +query.get('page') : 1;
-const {id} =useParams();
+    const {id} = useParams();
     useEffect(() => {
-        dataSource(currentPage,id).then(({data})=> setData(data))
+        dataSource(currentPage, id).then(({data}) => setData(data))
         // moviesService.getAll(currentPage).then(({data}) => setData(data))
     }, [currentPage]);
 

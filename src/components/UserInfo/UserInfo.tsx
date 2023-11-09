@@ -1,9 +1,14 @@
 import React from 'react';
 
+import avatar from "../../components/Assets/images/astronautpissing.png";
+import css from "./UserInfo.module.css"
 const UserInfo = () => {
     return (
-        <div>
-            <h1>UserInfo</h1>
+        <div className={css.user_info}>
+            <div className={css.img_container}>
+                <img src={avatar} alt=""/>
+            </div>
+            <div className={css.user}>Dummy User</div>
         </div>
     );
 };

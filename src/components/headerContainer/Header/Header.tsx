@@ -11,11 +11,13 @@ const Header = () => {
     return (
         <nav className={css.header}>
             <h1>Header</h1>
-            <NavLink to={'movies'}  >Movies</NavLink>
+            <NavLink to={'movies'}>Movies</NavLink>
             <NavLink to={"genres"}> Genres</NavLink>
             <h1>Search</h1>
             <Switch/>
-            <UserInfo/>
+            <div className={css.avatar}>
+                <UserInfo/>
+            </div>
         </nav>
     );
 };

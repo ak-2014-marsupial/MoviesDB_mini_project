@@ -28,7 +28,6 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
             </div>
 
             <div className={css.title}>{title}</div>
-            <div className={css.title}>{original_title}</div>
             <div className={css.content}>{overview}</div>
             <StarRatings starRatedColor='var(--star-primary)'
                          starEmptyColor='var(--star-secondary'
