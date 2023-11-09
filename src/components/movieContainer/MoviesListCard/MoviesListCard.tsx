@@ -2,10 +2,11 @@ import React, {FC} from 'react';
 
 import {IMovie} from "../../../interfaces/movieInterface";
 import css from "./MoviesListCard.module.css"
-import {posterBaseUrl} from "../../../constants/urls";
 import {useNavigate} from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import "../../../constants/var.css"
+import {PosterPreview} from "../../PosterPreview";
+import {posterBaseUrl} from "../../../constants";
 
 interface IProps{
     movie:IMovie
@@ -21,8 +22,8 @@ const MoviesListCard:FC<IProps> = ({movie}) => {
 
     return (
         <div className={css.movie_list_card} onClick={getInfo}>
-            <div style={{height:"70%"}}>
-                <img src={imgPath} alt={`img ${id}`}/>
+            <div className={css.wrap_image}>
+                <PosterPreview poster_path={imgPath} title={title}/>
             </div>
             <div className={css.content}>
                 <div className={css.rating}>
@@ -37,8 +38,6 @@ const MoviesListCard:FC<IProps> = ({movie}) => {
                 <div className={css.title}> {title}</div>
                 <div className={css.date}>{new Date(release_date).getFullYear()}</div>
             </div>
-
-
         </div>
     );
 };

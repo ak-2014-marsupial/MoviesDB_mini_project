@@ -24,7 +24,6 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
         <div className={css.movie_info}>
             <div className={css.wrap_image}>
                 <PosterPreview poster_path={poster_path} title={title}/>
-
             </div>
 
             <div className={css.title}>{title}</div>

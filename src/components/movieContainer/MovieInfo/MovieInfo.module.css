@@ -10,6 +10,13 @@
     width: 30vw;
     aspect-ratio: 0.8;
     margin-bottom: 1em;
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 1em;
+}
+.wrap_image img{
+    border-radius: 1em;
 }
 
 .title {

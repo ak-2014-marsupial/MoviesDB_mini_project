@@ -19,7 +19,7 @@ const Switch: FC = () => {
         <div className={css.container_switch}>
             <span>Change Theme</span>
             <label className={css.switch}>
-                <input type="checkbox" onChange={handleChange} checked={theme === 'dark'}/>
+                <input  type="checkbox" onChange={handleChange} checked={theme === 'dark'}/>
                 <span className={css.slider}></span>
             </label>
 

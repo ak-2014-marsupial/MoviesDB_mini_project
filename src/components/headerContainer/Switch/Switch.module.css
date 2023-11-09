@@ -27,7 +27,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--accent);
     transition: .4s;
     border-radius: 30px;
     outline: 1px solid var(--border);
@@ -41,7 +41,7 @@
     border-radius: 20px;
     left: 0.3em;
     bottom: 0.3em;
-    background-color: var(--text-primary);
+    background-color: var(--text-secondary);
     transition: .4s;
 }
 

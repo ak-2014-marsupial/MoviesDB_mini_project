@@ -11,8 +11,6 @@
     background-color: var(--accent);
     box-shadow: var(--shadow);
     transition: all ease 500ms;
-    /*color:inherit;*/
-    /*color:var(--text-primary);*/
 }
 
 .movie_list_card:hover{
@@ -20,11 +18,11 @@
     box-shadow: 0 0 10px var(--accent-hover), 0 0 10px var(--accent-hover), 0 0 10px var(--accent-hover), 0 0 10px var(--accent-hover),  0 0 10px var(--accent-hover) ;
 }
 
-.movie_list_card img{
+.wrap_image{
+    height: 70%;
+}
+.wrap_image img{
     border-radius: 1em 1em 0 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .content {
@@ -32,7 +30,6 @@
     height: 30%;
     width: 100%;
     color: var(--text-primary);
-
 
 }
 .rating{
@@ -47,13 +44,10 @@
     text-align: center;
     margin-bottom: 0.2em;
     color: var(--text-secondary);
-
 }
 
 .date{
     color:var(--text-secondary);
     text-align: end;
     margin: 0.2em;
-
-
 }
