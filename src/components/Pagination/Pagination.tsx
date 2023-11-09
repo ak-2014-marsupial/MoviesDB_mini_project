@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
-
-import css from "./Pagination.module.css"
 import { useSearchParams} from "react-router-dom";
+
+import css from "./Pagination.module.css";
 
 interface IProps{
     total_pages:number,
@@ -54,8 +54,6 @@ const Pagination:FC<IProps> = ({total_pages,total_results}) => {
             <button disabled={currentPage <= 1} onClick={handlePrev}>Prev</button>
             <button disabled={currentPage >= total_pages} onClick={handleNext}>Next</button>
             <div> ... {new Intl.NumberFormat().format(countMovieNext)} </div>
-
-
 
         </div>
     );
