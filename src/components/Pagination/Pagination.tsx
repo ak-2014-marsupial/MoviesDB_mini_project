@@ -5,25 +5,21 @@ import css from "./Pagination.module.css";
 
 interface IProps{
     total_pages:number,
-    total_results:number
+    total_results:number,
+    moviesPerPage:number,
 }
 
-const Pagination:FC<IProps> = ({total_pages,total_results}) => {
+const Pagination:FC<IProps> = ({total_pages,total_results,moviesPerPage}) => {
 
     const [query, setQuery] = useSearchParams({page: `1`});
-    const currentPage = +query.get('page')  ? +query.get('page') : 1;
-    // console.log(currentPage,'   ',total_pages,'   ',total_results ," >>>>",total_results- Math.ceil(total_results/total_pages)*currentPage);
+    const currentPage = +query.get('page');
+
     const [countMovieNext, setCountMovieNext] = useState(0)
     const [countMoviePrev, setCountMoviePrev] = useState(0)
     useEffect(() => {
-        const moviesOnPage=Math.ceil(total_results/total_pages);
-        setCountMovieNext(total_results- (currentPage+1)*moviesOnPage);
-        setCountMoviePrev((currentPage-1)*moviesOnPage)
-
+        setCountMovieNext((total_results- currentPage*moviesPerPage)>0?(total_results- currentPage*moviesPerPage):0);
+        setCountMoviePrev((currentPage-1)*moviesPerPage);
     }, [currentPage,total_results]);
-
-
-
 
     const handlePrev = () => {
         if (currentPage <= 1) {
@@ -53,7 +49,6 @@ const Pagination:FC<IProps> = ({total_pages,total_results}) => {
             <button disabled={currentPage <= 1} onClick={handlePrev}>Prev</button>
             <button disabled={currentPage >= total_pages} onClick={handleNext}>Next</button>
             <div> ... {new Intl.NumberFormat().format(countMovieNext)} </div>
-
         </div>
     );
 };

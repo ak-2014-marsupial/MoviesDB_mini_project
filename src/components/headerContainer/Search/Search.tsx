@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 
@@ -6,17 +6,15 @@ import css from "./Search.module.css";
 import icon from "../../Assets/images/search_find.png"
 
 const Search = () => {
-    const [searchValue, setSearchValue] = useState("");
     const navigate = useNavigate();
     const {register, handleSubmit} = useForm();
 
-    // const handleSearch = (txt: { search: string }) => {
-    //     // navigate(`/movies/search?search=${txt.search}&filter=Movie search results by name ${txt.search}`)
-    // };
 
     const handleSearch=(txt:{search:string})=>{
-        navigate(`/movies/search?search=${txt.search}`)
-        console.log("From Serach ==>>>",txt);
+        if(txt.search.trim().length>0){
+            navigate(`/movies/search?search=${txt.search}`)
+        } else navigate(`/movies`)
+
     }
 
     return (

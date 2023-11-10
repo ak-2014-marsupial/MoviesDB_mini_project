@@ -8,7 +8,7 @@ import {IRes} from "../../../types/IResType";
 import {Pagination} from "../../Pagination";
 
 interface IProps {
-    dataSource: (page: number, id?: string) => IRes<IMovieEntries>,
+    dataSource: (param1: number, param2: string) => IRes<IMovieEntries>,
 }
 
 const MoviesList: FC<IProps> = ({dataSource}) => {
@@ -17,16 +17,14 @@ const MoviesList: FC<IProps> = ({dataSource}) => {
     const [query] = useSearchParams({page: `${page}`});
 
     const currentPage = +query.get('page') ? +query.get('page') : 1;
-    const searchParam:string=query.get("search");
+    const searchValue:string=query.get("search");
     const {id} = useParams();
-    const param=id?id:searchParam;
+    const param2=id?id:searchValue;
 
 
     useEffect(() => {
-        dataSource(currentPage, param).then(({data}) => setData(data));
-        // moviesService.getAll(currentPage).then(({data}) => setData(data));
-
-    }, [currentPage]);
+        dataSource(currentPage, param2).then(({data}) => setData(data));
+    }, [currentPage,param2,dataSource]);
 
 
     return (
@@ -34,10 +32,8 @@ const MoviesList: FC<IProps> = ({dataSource}) => {
             <div className={css.movies_list}>
                 {results && results.map(i => <MoviesListCard key={i.id} movie={i}/>)}
             </div>
-
-            {total_pages&& <Pagination total_pages={total_pages} total_results={total_results}/>}
+            {total_pages&& <Pagination total_pages={total_pages} total_results={total_results} moviesPerPage={+results.length}/>}
         </>
-
     );
 };
 
