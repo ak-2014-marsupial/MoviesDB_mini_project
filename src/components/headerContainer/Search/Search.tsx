@@ -9,18 +9,14 @@ const Search = () => {
     const [searchValue, setSearchValue] = useState("");
     const navigate = useNavigate();
     const {register, handleSubmit} = useForm();
-    const submit = () => {
-
-        navigate("/search")
-    }
 
     // const handleSearch = (txt: { search: string }) => {
     //     // navigate(`/movies/search?search=${txt.search}&filter=Movie search results by name ${txt.search}`)
-    //     navigate(`/movies/search?search=${txt.search})
     // };
 
     const handleSearch=(txt:{search:string})=>{
         navigate(`/movies/search?search=${txt.search}`)
+        console.log("From Serach ==>>>",txt);
     }
 
     return (

@@ -15,12 +15,17 @@ const MoviesList: FC<IProps> = ({dataSource}) => {
     const [data, setData] = useState<IMovieEntries>({} as IMovieEntries);
     const {page, total_pages,total_results, results} = data;
     const [query] = useSearchParams({page: `${page}`});
-    const currentPage = +query.get('page') ? +query.get('page') : 1;
 
+    const currentPage = +query.get('page') ? +query.get('page') : 1;
+    const searchParam:string=query.get("search");
     const {id} = useParams();
+    const param=id?id:searchParam;
+
+
     useEffect(() => {
-        dataSource(currentPage, id).then(({data}) => setData(data));
-        // moviesService.getAll(currentPage).then(({data}) => setData(data))
+        dataSource(currentPage, param).then(({data}) => setData(data));
+        // moviesService.getAll(currentPage).then(({data}) => setData(data));
+
     }, [currentPage]);
 
 

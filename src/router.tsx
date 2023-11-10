@@ -17,7 +17,9 @@ const router = createBrowserRouter([
             {path: 'movies', element: <MoviesList dataSource={moviesService.getAll}/>},
             {path: 'movies/:movieId', element: <MovieInfoPage/>},
             {path: 'movies/genre/:id', element: <MoviesList dataSource={moviesService.getAllByGenreId}/>},
-            {path: 'movies/search', element: <MovieSearchPage/>}
+            {path: 'movies/search', element: <MoviesList dataSource={moviesService.searchMoviesByName}/>},
+
+            // {path: 'movies/search', element: <MovieSearchPage/>}
         ]
     }
 ])

@@ -6,7 +6,7 @@ const movie="/movie"
 const urls={
     getMovies:`discover${movie}`,
     getPopularMovie:`${movie}/popular`,
-    searchMovie:`/search`,
+    searchMovie:`/search${movie}`,
     getMovieDetails:(id:number):string=>`${movie}/${id}`,
     getMoviesByGenreId:(genreId:string):string=>`/genre/${genreId}/movies`,
     getGenres:`/genre/list`

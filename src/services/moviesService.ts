@@ -8,6 +8,8 @@ const moviesService={
     getById:(id:number):IRes<IMovieInfo>=>axiosService.get(urls.getMovieDetails(id)),
     getAllByGenreId:(page:number,genreId:string):IRes<IMovieEntries>=>axiosService.get(urls.getMoviesByGenreId(genreId),{params:{page:`${page}`}}),
     getGenres:():IRes<IGenres<IGenre[]> >=>axiosService.get(urls.getGenres),
+    searchMoviesByName:(page:number,query:string):IRes<IMovieEntries> =>axiosService.get(urls.searchMovie,
+        {params:{page:`${page}`,query:`${query}`}}),
 }
 
 export {

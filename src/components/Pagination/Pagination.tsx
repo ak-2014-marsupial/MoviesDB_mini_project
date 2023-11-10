@@ -19,7 +19,6 @@ const Pagination:FC<IProps> = ({total_pages,total_results}) => {
         const moviesOnPage=Math.ceil(total_results/total_pages);
         setCountMovieNext(total_results- (currentPage+1)*moviesOnPage);
         setCountMoviePrev((currentPage-1)*moviesOnPage)
-        console.log(total_results,"  ",currentPage, "  ",total_results);
 
     }, [currentPage,total_results]);
 
