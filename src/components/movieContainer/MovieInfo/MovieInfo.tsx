@@ -19,7 +19,7 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
         moviesService.getById(+movieId).then(({data}) => setMovie(data))
     }, []);
     if (!movie) return;
-    const { poster_path, original_title,title, release_date,vote_average, genres, runtime, overview} = movie;
+    const { poster_path,title, release_date,vote_average, genres, runtime, overview} = movie;
     return (
         <div className={css.movie_info}>
             <div className={css.wrap_image}>

@@ -1,5 +1,4 @@
 .user_info {
-    box-shadow: var(--shadow);
     border: 1px solid var(--text-secondary);
     border-radius: 0.5em;
 }
