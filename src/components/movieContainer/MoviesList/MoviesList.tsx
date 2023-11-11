@@ -4,8 +4,8 @@ import {IMovieEntries} from "../../../interfaces/movieInterface";
 import css from './MoviesList.module.css';
 import {useParams, useSearchParams} from "react-router-dom";
 import {MoviesListCard} from "../MoviesListCard";
-import {IRes} from "../../../types/IResType";
 import {Pagination} from "../../Pagination";
+import {IRes} from "../../../types";
 
 interface IProps {
     dataSource: (param1: number, param2: string) => IRes<IMovieEntries>,

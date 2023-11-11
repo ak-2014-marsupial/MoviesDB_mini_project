@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
 import {moviesService} from "../../services/moviesService";
-import {IGenre} from "../../interfaces/movieInterface";
 import {GenreBadge} from "../../components/GenreBadge";
 import css from "./GenrePage.module.css"
+import {IGenre} from "../../interfaces";
 
 const GenresPage = () => {
     const [genres, setGenres] = useState<IGenre[]>([])
