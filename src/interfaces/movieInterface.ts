@@ -65,10 +65,31 @@ export interface IProduction_company {
 export interface IProduction_country {
     iso_3166_1: string
     name: string
-}
+};
 
 export interface ISpoken_language {
     english_name: string
     iso_639_1: string
     name: string
+};
+
+export interface IActorEntries{
+    id: number,
+    cast: IActor[]
+};
+
+export interface  IActor{
+       adult:boolean
+    cast_id:number
+    character:string
+    credit_id:string
+    gender:number
+    id:number
+    known_for_department:string
+    name:string
+    order:number
+    original_name:string
+    popularity:number
+    profile_path:string
+
 }

@@ -3,17 +3,21 @@ import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 
 import css from "./Search.module.css";
-import icon from "../../Assets/images/search_find.png"
+import icon from "../../../Assets/images/search_find.png"
 
 const Search = () => {
     const navigate = useNavigate();
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit,reset} = useForm();
 
 
     const handleSearch=(txt:{search:string})=>{
         if(txt.search.trim().length>0){
             navigate(`/movies/search?search=${txt.search}`)
-        } else navigate(`/movies`)
+            reset()
+        } else {
+            navigate(`/movies`);
+            reset();
+        }
 
     }
 

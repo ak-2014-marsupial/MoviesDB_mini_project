@@ -8,6 +8,7 @@ import css from "./MovieInfo.module.css";
 import "../../../constants/var.css";
 import {PosterPreview} from "../../PosterPreview";
 import {GenreBadge} from "../../GenreBadge";
+import {ActorList} from "../../actorsContainer";
 
 interface IProps {
     movieId: string;
@@ -19,7 +20,7 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
         moviesService.getById(+movieId).then(({data}) => setMovie(data))
     }, []);
     if (!movie) return;
-    const { poster_path,title, release_date,vote_average, genres, runtime, overview} = movie;
+    const {id, poster_path, title, release_date, vote_average, genres, runtime, overview} = movie;
     return (
         <div className={css.movie_info}>
             <div className={css.wrap_image}>
@@ -39,8 +40,8 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
                 {genres.map(genre => <GenreBadge key={genre.id} id={genre.id} name={genre.name}/>)}
             </div>
             <div className={css.content}>Duration {runtime} min</div>
-            <div className={css.content}>Release date  {release_date} </div>
-
+            <div className={css.content}>Release date {release_date} </div>
+            {id && <ActorList id={id}/>}
 
         </div>
     );

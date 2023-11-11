@@ -1,6 +1,6 @@
 import React from 'react';
 
-import avatar from "../../components/Assets/images/astronautpissing.png";
+import avatar from "../../Assets/images/astronautpissing.png";
 import css from "./UserInfo.module.css"
 const UserInfo = () => {
     return (
