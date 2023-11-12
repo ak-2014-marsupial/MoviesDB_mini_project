@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+## Project Description:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a small educational endeavor focused on implementing pagination,<br> theme switching, and [themoviedb API](https://developer.themoviedb.org/reference/discover-movie) integration using TypeScript.<br> It serves as my first experience with TypeScript programming.
 
-## Available Scripts
+## Acknowledgements:
+I would like to express my gratitude to the [author of an article](https://dev.to/franklin030601/using-dark-mode-in-your-react-app-5364) that greatly <br>influenced the implementation of the theme switcher.<br> The entire theme switcher, implemented using the setAttribute method, was inspired by their work.
 
-In the project directory, you can run:
 
-### `npm start`
+## Router and Breakpoints:
+The project's router consists of a total of 5 breakpoints.<br> Three of these breakpoints control the same component, passing different callback requests <br> to the server. While this approach may not be widely applicable, I found the idea of reusing <br> the MovieList component intriguing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Known Issues:
+During the development process, I encountered two challenges that required <br> temporary solutions or "hacks".
+* [MovieInfo](https://github.com/ak-2014-marsupial/MoviesDB_mini_project/blob/main/src/components/movieContainer/MovieInfo/MovieInfo.tsx) - line 22
+* [MovieList](https://github.com/ak-2014-marsupial/MoviesDB_mini_project/blob/main/src/components/movieContainer/MoviesList/MoviesList.tsx) - line 22 <br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I hope that someone will be able to share a more elegant solution to these challenges in the future.<br>
+Thank you for your interest in this project.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###Screenshorts
 
-### `npm run build`
+![All films](https://github.com/ak-2014-marsupial/MoviesDB_mini_project/blob/main/src/screenshots/AllMovies.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Genres](https://github.com/ak-2014-marsupial/MoviesDB_mini_project/blob/main/src/screenshots/Genres.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Movie info](https://github.com/ak-2014-marsupial/MoviesDB_mini_project/blob/main/src/screenshots/MovieInfo.png)
