@@ -18,7 +18,7 @@ const MovieInfo: FC<IProps> = ({movieId}) => {
     const [movie, setMovie] = useState<IMovieInfo>(null);
     useEffect(() => {
         moviesService.getById(+movieId).then(({data}) => setMovie(data))
-    }, []);
+    }, [movieId]);
     if (!movie) return;
     const {id, poster_path, title, release_date, vote_average, genres, runtime, overview} = movie;
     return (

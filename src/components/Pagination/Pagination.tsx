@@ -1,15 +1,15 @@
 import React, {FC, useEffect, useState} from 'react';
-import { useSearchParams} from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 
 import css from "./Pagination.module.css";
 
-interface IProps{
-    total_pages:number,
-    total_results:number,
-    moviesPerPage:number,
+interface IProps {
+    total_pages: number,
+    total_results: number,
+    moviesPerPage: number,
 }
 
-const Pagination:FC<IProps> = ({total_pages,total_results,moviesPerPage}) => {
+const Pagination: FC<IProps> = ({total_pages, total_results, moviesPerPage}) => {
 
     const [query, setQuery] = useSearchParams({page: `1`});
     const currentPage = +query.get('page');
@@ -17,9 +17,9 @@ const Pagination:FC<IProps> = ({total_pages,total_results,moviesPerPage}) => {
     const [countMovieNext, setCountMovieNext] = useState(0)
     const [countMoviePrev, setCountMoviePrev] = useState(0)
     useEffect(() => {
-        setCountMovieNext((total_results- currentPage*moviesPerPage)>0?(total_results- currentPage*moviesPerPage):0);
-        setCountMoviePrev((currentPage-1)*moviesPerPage);
-    }, [currentPage,total_results]);
+        setCountMovieNext((total_results - currentPage * moviesPerPage) > 0 ? (total_results - currentPage * moviesPerPage) : 0);
+        setCountMoviePrev((currentPage - 1) * moviesPerPage);
+    }, [currentPage, total_results, moviesPerPage]);
 
     const handlePrev = () => {
         if (currentPage <= 1) {
@@ -53,4 +53,4 @@ const Pagination:FC<IProps> = ({total_pages,total_results,moviesPerPage}) => {
     );
 };
 
-export  {Pagination};
+export {Pagination};
