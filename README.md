@@ -18,7 +18,7 @@ I hope that someone will be able to share a more elegant solution to these chall
 Thank you for your interest in this project.
 
 
-###Screenshorts
+### Screenshorts
 
 ![All films](https://github.com/ak-2014-marsupial/MoviesDB_mini_project/blob/main/src/screenshots/AllMovies.png)
 
