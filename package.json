@@ -1,5 +1,6 @@
 {
   "name": "react_ts_mini_movies_project",
+  "homepage": "https://ak-2014-marsupial.github.io/MoviesDB",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
